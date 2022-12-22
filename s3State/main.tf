@@ -7,7 +7,7 @@ resource "aws_s3_bucket" "s3Buckets" {
   for_each      = toset(var.bucketName)
   bucket        = each.key
   force_destroy = true
-  tags = module.globalVars.default_tags
+  tags          = module.globalVars.default_tags
 }
 
 
