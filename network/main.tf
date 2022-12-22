@@ -39,11 +39,11 @@ module "autoScalingGroup" {
   source           = "../modules/autoScalingGroup"
   env              = var.env
   prefix           = module.globalVars.prefix
-  target_group_arn = module.alb.target_group
+  target_group_arn = module.loadBalancer.target_group
   vpc_id           = module.vpc-dev.vpc_id
   public_subnet    = module.vpc-dev.public_subnet_ids
   private_subnet   = module.vpc-dev.private_subnet_ids
-  security_groups  = [module.alb.security_groups]
+  security_groups  = [module.loadBalancer.security_groups]
   min_size         = var.min_size
   max_size         = var.max_size
   instance_type    = var.instance_type
