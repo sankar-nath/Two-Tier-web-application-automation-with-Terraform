@@ -1,6 +1,6 @@
 #resource block for launch configuration of ec2 instances used as web servers
 resource "aws_launch_configuration" "server_launch_config" {
-  name_prefix                 = "${local.local_name}-webserver-launch-config"
+  name_prefix                 = "${local.localName}-webserver-launch-config"
   image_id                    = var.instance_ami
   instance_type               = var.instance_type
   key_name                    = var.key_name
@@ -12,8 +12,7 @@ resource "aws_launch_configuration" "server_launch_config" {
     prefix = var.prefix,
     name1  = var.members[0],
     name2  = var.members[1],
-    name3  = var.members[2],
-    name4  = var.members[3]
+    name3  = var.members[2]
   })
 
   root_block_device {
