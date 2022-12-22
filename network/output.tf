@@ -16,7 +16,7 @@ output "vpc_id" {
 }
 
 output "load_balancer_dns" {
-  value = module.alb.load_balancer_access
+  value = module.loadBalancer.load_balancer_access
 }
 
 output "bastion_ip" {

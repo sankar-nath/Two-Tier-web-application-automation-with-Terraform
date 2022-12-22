@@ -26,7 +26,7 @@ module "vpc-dev" {
 module "loadBalancer" {
   source         = "../modules/loadBalancer"
   env            = var.env
-  prefix         = module.globalvars.prefix
+  prefix         = module.globalVars.prefix
   vpc_id         = module.vpc-dev.vpc_id
   public_subnet  = module.vpc-dev.public_subnet_ids
   private_subnet = module.vpc-dev.private_subnet_ids
@@ -38,7 +38,7 @@ module "loadBalancer" {
 module "autoScalingGroup" {
   source           = "../modules/autoScalingGroup"
   env              = var.env
-  prefix           = module.globalvars.prefix
+  prefix           = module.globalVars.prefix
   target_group_arn = module.alb.target_group
   vpc_id           = module.vpc-dev.vpc_id
   public_subnet    = module.vpc-dev.public_subnet_ids
@@ -50,7 +50,7 @@ module "autoScalingGroup" {
   instance_ami     = data.aws_ami.latest_amazon_linux.id
   key_name         = module.aws_key.key_name
   desired_capacity = var.desired_capacity
-  members          = module.globalvars.members
+  members          = module.globalVars.members
 }
 
 
