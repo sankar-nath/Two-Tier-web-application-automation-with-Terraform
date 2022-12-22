@@ -18,15 +18,8 @@ module "vpc-dev" {
   vpc_cidr            = var.vpc_cidr
   public_cidr_blocks  = var.public_subnet_cidrs
   private_cidr_blocks = var.private_subnet_cidrs
-  prefix              = module.globalvars.prefix
+  prefix              = module.globalVars.prefix
   default_tags        = var.default_tags
-}
-
-# create AWS key
-module "aws_key" {
-  source   = "../modules/aws_key"
-  key_name = "${var.prefix}-${var.env}-key"
-  key_path = abspath("../keys/acs_project.pub")
 }
 
 # Module to deploy application loadbalancer
@@ -58,6 +51,14 @@ module "autoScalingGroup" {
   key_name         = module.aws_key.key_name
   desired_capacity = var.desired_capacity
   members          = module.globalvars.members
+}
+
+
+# create AWS key
+module "aws_key" {
+  source   = "../modules/aws_key"
+  key_name = "${var.prefix}-${var.env}-key"
+  key_path = abspath("../keys/acs_project.pub")
 }
 
 module "bastion" {
