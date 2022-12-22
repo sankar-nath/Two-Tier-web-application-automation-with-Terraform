@@ -63,7 +63,7 @@ module "autoScalingGroup" {
 module "bastion" {
   source = "../modules/bastion"
   env              = var.env
-  prefix           = module.globalvars.prefix
+  prefix           = module.globalVars.prefix
   instance_ami     = data.aws_ami.latest_amazon_linux.id
   key_name         = module.aws_key.key_name  
   instance_type    = var.instance_type
