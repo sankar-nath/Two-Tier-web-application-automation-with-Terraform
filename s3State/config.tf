@@ -2,7 +2,7 @@
 
 variable "bucketName" {
   type    = list(string)
-  default = ["acsFinalGroup12Prod", "acsFinalGroup12Staging", "acsFinalGroup12Dev"]
+  default = ["acsfinalgroup12prod", "acsfinalgroup12staging", "acsfinalgroup12dev"]
 }
 
 variable "region" {
