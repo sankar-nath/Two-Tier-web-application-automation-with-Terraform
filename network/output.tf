@@ -12,7 +12,7 @@ output "internet_gateway_ids" {
 
 output "vpc_id" {
   description = "Virtual Private Cloud ID"
-  value = module.vpc-dev.vpc_id
+  value       = module.vpc-dev.vpc_id
 }
 
 output "load_balancer_dns" {

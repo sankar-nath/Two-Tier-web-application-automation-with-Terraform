@@ -24,12 +24,12 @@ module "vpc-dev" {
 
 # Module to deploy application loadbalancer
 module "loadBalancer" {
-  source         = "../modules/loadBalancer"
-  env            = var.env
-  prefix         = module.globalVars.prefix
-  vpc_id         = module.vpc-dev.vpc_id
-  public_subnet  = module.vpc-dev.public_subnet_ids
-  private_subnet = module.vpc-dev.private_subnet_ids
+  source                    = "../modules/loadBalancer"
+  env                       = var.env
+  prefix                    = module.globalVars.prefix
+  vpc_id                    = module.vpc-dev.vpc_id
+  public_subnet             = module.vpc-dev.public_subnet_ids
+  private_subnet            = module.vpc-dev.private_subnet_ids
   bastion_security_group_id = module.bastion.bastion_security_group_id
 }
 
@@ -62,12 +62,12 @@ module "aws_key" {
 }
 
 module "bastion" {
-  source = "../modules/bastion"
-  env              = var.env
-  prefix           = module.globalVars.prefix
-  instance_ami     = data.aws_ami.latest_amazon_linux.id
-  key_name         = module.aws_key.key_name  
-  instance_type    = var.instance_type
-  vpc_id = module.vpc-dev.vpc_id
+  source            = "../modules/bastion"
+  env               = var.env
+  prefix            = module.globalVars.prefix
+  instance_ami      = data.aws_ami.latest_amazon_linux.id
+  key_name          = module.aws_key.key_name
+  instance_type     = var.instance_type
+  vpc_id            = module.vpc-dev.vpc_id
   bastion_subnet_id = module.vpc-dev.public_subnet_ids[0]
 }
