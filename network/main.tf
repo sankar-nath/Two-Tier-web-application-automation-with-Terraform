@@ -56,7 +56,7 @@ module "autoScalingGroup" {
 
 # create AWS key
 module "aws_key" {
-  source   = "../modules/aws_key"
+  source   = "../modules/awsKeys"
   key_name = "${var.prefix}-${var.env}-key"
   key_path = abspath("../keys/acs_project.pub")
 }
