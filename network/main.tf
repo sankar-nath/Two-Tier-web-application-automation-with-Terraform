@@ -1,3 +1,6 @@
+#initial networking deployment 
+
+#ami we will use for our ec2 instances
 data "aws_ami" "latest_amazon_linux" {
   owners      = ["amazon"]
   most_recent = true
@@ -61,6 +64,7 @@ module "aws_key" {
   key_path = abspath("../keys/acs_project.pub")
 }
 
+#bastion deployment
 module "bastion" {
   source            = "../modules/bastion"
   env               = var.env

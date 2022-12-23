@@ -10,7 +10,7 @@ echo "<BODY>"  >>  /var/www/html/index.html
 echo "<H1>This page was created by Seneca CAA NAA's ${prefix}, hosted on $(hostname -f) in ${env} environment.</H1>"  >>  /var/www/html/index.html
 echo "<table align="center">" >> /var/www/html/index.html
 echo "  <tr>"  >>  /var/www/html/index.html
-echo "		<td><img src="/images/sankar.jpg" width="400" height="400" style="display:block"></td>"  >>  /var/www/html/index.html
+echo "		<td><img src="/images/team.jpg" width="400" height="400" style="display:block"></td>"  >>  /var/www/html/index.html
 echo "		<td><ul>" >>  /var/www/html/index.html
 echo "    <h2 style="font-family:verdana"><li>${name1}</li></h2>" >>  /var/www/html/index.html
 echo "    <h2 style="font-family:verdana"><li>${name2}</li></h2>" >>  /var/www/html/index.html
