@@ -1,5 +1,6 @@
 #!/bin/bash
 yum install httpd -y
+mkdir /var/www/html/images
 aws s3 cp s3://acsfinalgroup12${env}/images/ /var/www/html/images --recursive
 
 echo "<HTML>"  >  /var/www/html/index.html
