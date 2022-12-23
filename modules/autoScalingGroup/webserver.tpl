@@ -17,7 +17,6 @@ echo "		<td><ul>" >>  /var/www/html/index.html
 echo "    <h2><li>${name1}</li></h2>" >>  /var/www/html/index.html
 echo "    <h2><li>${name2}</li></h2>" >>  /var/www/html/index.html
 echo "    <h2><li>${name3}</li></h2>" >>  /var/www/html/index.html
-echo "    <h2><li>${name4}</li></h2>" >>  /var/www/html/index.html
 echo "    </ul></td>" >>  /var/www/html/index.html
 echo "		<td><img src="/images/group.jpg"></td>"  >>  /var/www/html/index.html
 echo "  </tr>"  >>  /var/www/html/index.html
